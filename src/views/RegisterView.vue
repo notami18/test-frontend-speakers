@@ -1,10 +1,11 @@
 <template>
     <section class="container">
         <div class="cards">
-            <form class="form-control">
+            <form @submit.prevent="save(userRegister)" class="form-control">
                 <h2>Register</h2>
                 <label for="name">Name</label>
                 <input
+                    v-model="userRegister.name"
                     class="demo-text"
                     placeholder="User"
                     required
@@ -14,6 +15,7 @@
 
                 <label class="custom-mt" for="username">UserName</label>
                 <input
+                    v-model="userRegister.username"
                     class="demo-text"
                     placeholder="UserName"
                     required
@@ -23,6 +25,7 @@
 
                 <label class="custom-mt" for="email">Email</label>
                 <input
+                    v-model="userRegister.email"
                     class="demo-text"
                     placeholder="Mail"
                     required
@@ -32,6 +35,7 @@
 
                 <label class="custom-mt" for="password">Password</label>
                 <input
+                    v-model="userRegister.password"
                     class="password"
                     placeholder="Password"
                     required
@@ -53,7 +57,29 @@
 
 <script>
 export default {
-    name: "register"
+    name: "register",
+    data() {
+        return {
+            userRegister: {
+                name: null,
+                username: null,
+                email: null,
+                password: null
+            },
+            dataUser: []
+        }
+    },
+    methods: {
+        async save(register) {
+            this.dataUser.push(register)
+
+            const message = await this.createUserLocal(this.dataUser);
+            alert(message)
+            this.$router.push({
+                path: '/login'
+            })
+        }
+    },
 }
 </script>
 
