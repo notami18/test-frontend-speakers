@@ -12,9 +12,9 @@
             <nav>
                 <ul class="mainMenu">
                     <li>
-                        <a href="#">
+                        <router-link to="/">
                             <i class="fa-solid fa-user-group"></i> &nbsp;&nbsp; Users
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </nav>
@@ -36,12 +36,12 @@
                 </el-table-column>
                 <el-table-column min-width="100px" align="center" label>
                     <div slot-scope="{ row }" class="d-flex">
-                        <a @click.prevent="onCheck(row)">Echo</a>
+                        <a @click.prevent="onCheck(row)"><i class="fa-solid fa-check" style="color: green"></i></a>
                     </div>
                 </el-table-column>
                 <el-table-column min-width="100px" align="center" label>
                     <div slot-scope="{ row }" class="d-flex">
-                        <a @click.prevent="onDelete(row)">Eliminar</a>
+                        <a @click.prevent="onDelete(row)"><i class="fa-solid fa-trash-can" style="color: red"></i></a>
                     </div>
                 </el-table-column>
             </el-table>
