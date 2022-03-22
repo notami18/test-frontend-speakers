@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+$font-text: "Roboto",
+"sans-serif";
+$bg-container: #f5f6fa;
+$bg-prymary: #ffffff;
+body {
+    background-color: $bg-container !important;
+}
+
+.bar-vertical {
+    position: absolute;
+    width: 245px;
+    height: 100%;
+    left: -3px;
+    top: 0px;
+    background: #ffffff;
+    box-shadow: 4px 0px 4px rgba(43, 45, 55, 0.01);
+}
+
+.title-bar {
+    position: absolute;
+    width: 194px;
+    height: 77px;
+    left: 30px;
+    top: 17px;
+    font-family: "Roboto", "sans-serif";
+    font-style: normal;
+    font-size: 24px;
+    line-height: 52px;
+    color: #000000;
+    letter-spacing: 0px;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mainMenu {
+    margin-top: 90px;
+    height: 52px;
+    left: 35.34%;
+    right: 32.76%;
+    top: calc(50% - 52px / 2);
+    font-family: "Roboto", "sans-serif";
+    font-style: normal;
+    // font-weight: 500;
+    font-size: 14px;
+    line-height: 52px;
+    color: #000000;
+}
+
+.bar-horizontal {
+    position: sticky;
+    max-width: 113rem;
+    height: 74px;
+    left: 277px;
+    top: 0px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(43, 45, 55, 0.0105441);
+}
+
+.user-name {
+    position: absolute;
+    height: 52px;
+    left: 90.68%;
+    right: 0%;
+    top: calc(50% - 52px / 2);
+    font-family: "Roboto", "sans-serif";
+    font-style: normal;
+    font-size: 14px;
+    line-height: 52px;
+    /* identical to box height, or 371% */
+    color: #74798c;
+}
+
+.avatar {
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 85.95%;
+    right: 65.79%;
+    top: 17%;
+    bottom: 3.85%;
+    background-image: url("../../public/img/avatar/img_avatar3.png");
+}
+
+.title-dashboard {
+    position: absolute;
+    height: 52px;
+    left: 31.68%;
+    right: 0.99%;
+    top: calc(50% - 52px / 2);
+    font-family: "Roboto", "sans-serif";
+    font-size: 14px;
+    line-height: 52px;
+    color: #74798c;
+}
+
+.add-users {
+    position: absolute;
+    background: #0054fe;
+    border-radius: 8px;
+    left: 277px;
+    top: 120px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.text-users-button {
+    height: 16px;
+    left: 31.79%;
+    right: 24.1%;
+    top: calc(50% - 16px / 2 - 1px);
+    font-family: "Roboto", "sans-serif";
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+}
+
+.table {
+    position: relative;
+    max-width: 113rem;
+    height: 551px;
+    left: 277px;
+    top: 142px;
+    background: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+}
