@@ -5,7 +5,7 @@
         <span>Dashboard</span>
       </div>
       <span class="avatar"></span>
-      <span class="user-name">Carlos Andres</span>
+      <span class="user-name">{{ userName }}</span>
     </div>
     <div class="bar-vertical">
       <h1 class="title-bar">System</h1>
@@ -72,7 +72,7 @@ export default {
         {
           prop: 'address',
           label: 'Address',
-          minWidth: 100,
+          minWidth: 200,
           sortable: true
         },
         {
@@ -83,11 +83,12 @@ export default {
         }
       ],
       tableData: [],
+      userName: null
     }
   },
   mounted() {
     this.getUsers()
-    console.log(this.dataUsers)
+    this.userName = localStorage.userName;
   },
 
   methods: {
@@ -105,8 +106,11 @@ export default {
         }
       })
     },
+
     onDetails(row) {
-      console.log(row)
+      this.$router.push({
+        path: `/users/${row.id}/todos`
+      })
     }
   },
 }

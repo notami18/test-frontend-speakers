@@ -5,6 +5,7 @@ import store from "../store";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
+import DetailUserView from "../views/DetailView.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,14 @@ const routes = [{
             guest: true,
         },
     },
+    {
+        path: "/users/:id/todos",
+        name: "detail-user",
+        component: DetailUserView,
+        meta: {
+            authentication: true,
+        },
+    },
 ];
 
 const router = new VueRouter({
@@ -53,7 +62,10 @@ const router = new VueRouter({
 });
 
 const routeAccess = async(to, from, accountState, next) => {
-    if (!accountState.authenticated && to.path === "/login" || to.path === "/register") {
+    if (
+        (!accountState.authenticated && to.path === "/login") ||
+        to.path === "/register"
+    ) {
         next();
     } else {
         if (from.path === "/login" || from.path === "/register") {
@@ -72,7 +84,10 @@ router.beforeEach((to, from, next) => {
     const authenticated = localStorage.userName && localStorage.email;
     const accountState = store.state.authentication;
 
-    if (to.path === "/login" || to.path === "/register" && to.meta.guest && !accountState.authenticated) {
+    if (
+        to.path === "/login" ||
+        (to.path === "/register" && to.meta.guest && !accountState.authenticated)
+    ) {
         if (authenticated) {
             next({
                 path: "/",
